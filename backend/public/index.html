@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="JobWrap – No-fluff tech career roadmaps. Real skills, real timelines, real salary numbers." />
+  <title>JobWrap – Brutally Honest Career Roadmaps</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body>
+
+  <div class="orb-mid" aria-hidden="true"></div>
+
+  <div class="page-wrapper">
+
+    <!-- Brand -->
+    <div class="brand">
+      <div class="brand-icon">🗺️</div>
+      <span class="brand-name">JobWrap</span>
+    </div>
+    <p class="brand-tagline">// no fluff career roadmaps &nbsp;·&nbsp; career_brutally.honest</p>
+
+    <!-- Hero -->
+    <div class="hero">
+      <h1>Enter a tech role.<br /><span>Get the honest roadmap.</span></h1>
+      <p>Real skills, real timelines, real salary numbers.<br />No motivation. No guarantees.</p>
+    </div>
+
+    <!-- Main form card -->
+    <section class="card" aria-label="Roadmap generator">
+      <form id="roadmap-form" class="form" novalidate>
+
+        <label class="field">
+          <span class="label">Job Role *</span>
+          <input id="role" name="role" type="text" placeholder="e.g. VLSI Engineer, ML Engineer, Backend Developer"
+            required autocomplete="off" />
+        </label>
+
+        <!-- Optional inputs toggle -->
+        <div id="optional-toggle" class="optional-toggle" role="button" tabindex="0" aria-expanded="false">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+          <span>+ optional inputs</span>
+        </div>
+
+        <div id="optional-fields" class="optional-fields">
+          <div class="grid">
+            <label class="field">
+              <span class="label">Current level</span>
+              <select id="currentLevel" name="currentLevel">
+                <option value="">Not provided</option>
+                <option value="beginner">Beginner</option>
+                <option value="junior">Junior</option>
+                <option value="mid">Mid</option>
+                <option value="senior">Senior</option>
+              </select>
+            </label>
+
+            <label class="field">
+              <span class="label">Hours / day</span>
+              <input id="hoursPerDay" name="hoursPerDay" type="number" min="0" step="0.5" placeholder="e.g. 2" />
+            </label>
+
+            <label class="field">
+              <span class="label">Target (months)</span>
+              <input id="targetTimelineMonths" name="targetTimelineMonths" type="number" min="0" step="1"
+                placeholder="e.g. 6" />
+            </label>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button id="submit" type="submit">generate roadmap →</button>
+        </div>
+
+        <p id="status" class="status" aria-live="polite"></p>
+        <p id="error" class="error" aria-live="polite"></p>
+
+      </form>
+    </section>
+
+    <!-- Output rendered here by main.js -->
+    <section id="output" class="output" aria-label="Roadmap output"></section>
+
+  </div>
+
+  <script src="./main.js"></script>
+</body>
+
+</html>
